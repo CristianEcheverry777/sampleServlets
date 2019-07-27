@@ -85,7 +85,7 @@ public class FirstServlet extends HttpServlet {
         Persona p = new Persona();
         p.setApellido(request.getParameter("nombre"));
         p.setNombre(request.getParameter("apellido"));
-        p.setUsuario(request.getParameter("usuario"));
+        p.setLogin(request.getParameter("login"));
 
         String personaJsonString = new Gson().toJson(p);
 

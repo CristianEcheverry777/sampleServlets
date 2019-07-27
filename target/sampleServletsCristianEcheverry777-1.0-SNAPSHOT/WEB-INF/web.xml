@@ -4,6 +4,10 @@
         <description>ServletContextListener</description>
         <listener-class>org.h2.server.web.DbStarter</listener-class>
     </listener>
+    <listener>
+        <description>ServletContextListener</description>
+        <listener-class>DBInitiatorServletListener</listener-class>
+    </listener>
     <servlet>
         <servlet-name>H2Console</servlet-name>
         <servlet-class>org.h2.server.web.WebServlet</servlet-class>
@@ -35,7 +39,6 @@
         <param-name>db.tcpServer</param-name>
         <param-value>-tcpAllowOthers</param-value>
     </context-param>
-    
     <servlet>
         <servlet-name>FirstServlet</servlet-name>
         <servlet-class>edu.udem.java2.ejemplo1.sampleservlets.FirstServlet</servlet-class>
@@ -44,6 +47,10 @@
         <servlet-name>SubmitFromJSPServlet</servlet-name>
         <servlet-class>SubmitFromJSPServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>edu.udem.java2.ejemplo1.sampleservlets.LoginServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>FirstServlet</servlet-name>
         <url-pattern>/FirstServlet</url-pattern>
@@ -51,10 +58,14 @@
     <servlet-mapping>
         <servlet-name>SubmitFromJSPServlet</servlet-name>
         <url-pattern>/SubmitFromJSPServlet</url-pattern>
-    </servlet-mapping>    
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>H2Console</servlet-name>
         <url-pattern>/console/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
